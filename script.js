@@ -128,8 +128,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- ФУНКЦІЯ ВИНОСИТЬСЯ НАЗОВНІ ---
 // Тепер браузер бачить її завжди, навіть якщо DOM ще вантажиться
+// --- ФУНКЦІЯ ПОКАЗУ ПОВІДОМЛЕННЯ (TOAST) ---
+function showToast(message) {
+    // 1. Шукаємо або створюємо елемент
+    let toast = document.getElementById('toast-notification');
+    
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        document.body.appendChild(toast);
+    }
+
+    // 2. Задаємо текст та іконку
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${message}`;
+
+    // 3. Показуємо
+    toast.classList.add('show');
+
+    // 4. Ховаємо через 3 секунди (3000 мс)
+    // 5 секунд трохи довго для такого повідомлення, 3 - стандарт UX
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// --- ОНОВЛЕНА ФУНКЦІЯ SHARE ---
 function shareSite() {
     if (navigator.share) {
+        // Для мобільних (рідне меню)
         navigator.share({
             title: 'GOSTRO.UZH',
             text: 'Професійна заточка ножів в Ужгороді. Рекомендую!',
@@ -138,9 +164,16 @@ function shareSite() {
         .then(() => console.log('Successful share'))
         .catch((error) => console.log('Error sharing', error));
     } else {
-        // Фоллбек для ПК
+        // Для комп'ютерів (копіювання в буфер + красиве повідомлення)
         navigator.clipboard.writeText(window.location.href)
-            .then(() => alert('Посилання скопійовано!'))
-            .catch(err => console.error('Не вдалося скопіювати', err));
+            .then(() => {
+                // ЗАМІСТЬ ALERT ВИКЛИКАЄМО НАШ TOAST
+                showToast('Посилання скопійовано!');
+            })
+            .catch(err => {
+                console.error('Не вдалося скопіювати', err);
+                showToast('Помилка копіювання');
+            });
     }
 }
+
