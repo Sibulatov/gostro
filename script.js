@@ -105,5 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // функція поділитись
+    function shareSite() {
+        if (navigator.share) {
+            navigator.share({
+                title: 'GOSTRO.UZH',
+                text: 'Професійна заточка ножів в Ужгороді. Рекомендую!',
+                url: window.location.href
+            })
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+            // Якщо браузер старий і не підтримує Share - просто копіюємо в буфер
+            navigator.clipboard.writeText(window.location.href);
+            alert('Посилання скопійовано!');
+        }
+    }
+
 });
+
 
