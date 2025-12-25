@@ -194,3 +194,48 @@ footer { text-align: center; padding-bottom: calc(40px + env(safe-area-inset-bot
     transform: translateY(0);
 }
 
+/* Toast Notification (Спливаюче повідомлення) */
+#toast-notification {
+    visibility: hidden;
+    min-width: 250px;
+    background: rgba(20, 20, 20, 0.95); /* Темний фон */
+    color: #E6DCC8; /* Ваш колір тексту */
+    text-align: center;
+    border-radius: 50px; /* Закруглені кути */
+    padding: 14px 24px;
+    position: fixed;
+    z-index: 10000;
+    
+    /* Позиція: зверху по центру */
+    left: 50%;
+    top: 30px; 
+    transform: translateX(-50%) translateY(-100px); /* Сховано зверху */
+    
+    /* Краса */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Легка золота рамка */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* Анімація */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
+}
+
+#toast-notification.show {
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Виїжджає на місце */
+    opacity: 1;
+}
+
+/* Іконка галочки всередині */
+#toast-notification i {
+    color: #D4AF37; /* Золотий акцент */
+    font-size: 16px;
+}
+
