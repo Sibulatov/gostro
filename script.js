@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // функція поділитись
-    function shareSite() {
+    window.shareSite = function() {
         if (navigator.share) {
             navigator.share({
                 title: 'GOSTRO.UZH',
@@ -117,10 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             // Якщо браузер старий і не підтримує Share - просто копіюємо в буфер
             navigator.clipboard.writeText(window.location.href);
-            alert('Посилання скопійовано!');
+             alert('Посилання скопійовано!');
         }
     }
 
 });
+
 
 
