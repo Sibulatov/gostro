@@ -18,6 +18,12 @@ body {
     display: flex; flex-direction: column; overflow-x: hidden; position: relative;
 }
 
+/* колір виділення тексту */
+::selection {
+    background: var(--accent); /* Ваш золотий колір */
+    color: #000;
+}
+
 .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 15% 25%, var(--gradient-1) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(30, 144, 255, 0.15) 0%, transparent 50%); pointer-events: none; }
 
 .app-header { position: fixed; top: 0; left: 0; right: 0; height: 65px; z-index: 100; background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border-bottom: 1px solid var(--glass-border); padding-top: env(safe-area-inset-top); box-shadow: var(--glass-shadow); }
@@ -187,3 +193,4 @@ footer { text-align: center; padding-bottom: calc(40px + env(safe-area-inset-bot
     opacity: 1;
     transform: translateY(0);
 }
+
