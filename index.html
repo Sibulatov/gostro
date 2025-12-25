@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#0a0a0a">
     
-    <title>Заточка ножів Ужгород | GOSTRO.UZH</title>
-    <meta name="description" content="Професійна заточка ножів. Ужгород та вся Україна.">
+    <!-- === SEO: Basic === -->
+    <title>Заточка ножів Ужгород | Професійна майстерня GOSTRO.UZH</title>
+    <meta name="description" content="🗡️ Професійна заточка ножів в Ужгороді та по всій Україні (Нова Пошта). Кухонні, мисливські, складні ножі. Відновлення ріжучої кромки. ⚡ Швидко, якісно, гостро.">
+    <meta name="keywords" content="заточка ножів, ужгород, загострити ніж, ремонт ножів, заточка кухонних ножів, мисливські ножі, доставка нова пошта, GOSTRO.UZH">
+    <meta name="author" content="GOSTRO.UZH">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Важливо: Вкажіть тут реальну адресу вашого сайту, коли він буде на хостингу -->
+    <link rel="canonical" href="https://gostro.uz.ua/"> 
+
+    <!-- === Social Media (Open Graph / Facebook / Telegram / Viber) === -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gostro.uz.ua/">
+    <meta property="og:title" content="Заточка ножів Ужгород | GOSTRO.UZH">
+    <meta property="og:description" content="Повернемо вашим ножам бритвену гостроту! Кухонні, мисливські, EDC. Працюємо поштою по всій Україні.">
+    <!-- Створіть картинку 1200x630px і назвіть її og-image.jpg -->
+    <meta property="og:image" content="https://gostro.uz.ua/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="GOSTRO.UZH">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- === Twitter Card === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Заточка ножів Ужгород | GOSTRO.UZH">
+    <meta name="twitter:description" content="Професійна заточка та ремонт ножів. Ужгород та вся Україна. Замовляйте онлайн!">
+    <meta name="twitter:image" content="https://gostro.uz.ua/img/og-image.jpg">
+
+    <!-- === Favicons (Іконки сайту) === -->
+    <!-- Рекомендую згенерувати їх на realfavicongenerator.net -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +46,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- === Schema.org Microdata (Дуже важливо для Google Maps та пошуку) === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "GOSTRO.UZH - Заточка ножів",
+      "image": "https://gostro.uz.ua/logo.jpg",
+      "@id": "https://gostro.uz.ua/",
+      "url": "https://gostro.uz.ua/",
+      "telephone": "+380XXXXXXXXX",
+      "priceRange": "100-300 UAH",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ужгород",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.6208,
+        "longitude": 22.2879
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://instagram.com/gostro.uzh",
+        "https://t.me/gostro_uzh"
+      ]
+    }
+    </script>
 </head>
 <body data-theme="dark">
 
@@ -23,10 +93,10 @@
 
     <nav class="app-header">
         <div class="header-inner">
-            <a href="#" class="logo">GOSTRO<span>.UZH</span></a>
+            <a href="#" class="logo" aria-label="На головну">GOSTRO<span>.UZH</span></a>
             <div class="header-actions">
-                <button class="btn-icon" onclick="toggleTheme()"><i class="fa-solid fa-sun" id="theme-icon"></i></button>
-                <a href="tel:+380XXXXXXXXX" class="btn-icon btn-call"><i class="fa-solid fa-phone"></i></a>
+                <button class="btn-icon" onclick="toggleTheme()" aria-label="Змінити тему"><i class="fa-solid fa-sun" id="theme-icon"></i></button>
+                <a href="tel:+380XXXXXXXXX" class="btn-icon btn-call" aria-label="Зателефонувати"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </nav>
@@ -35,7 +105,8 @@
         
         <section class="hero animate-on-load">
             <div class="avatar-box">
-                <img src="img/logo.jpg" class="avatar-img" alt="Logo">
+                <!-- Додано ALT для кращого розуміння гуглом -->
+                <img src="img/logo.jpg" class="avatar-img" alt="Логотип майстерні заточки GOSTRO.UZH">
                 <div class="status-dot"></div>
             </div>
             
@@ -50,16 +121,16 @@
             </div>
 
             <div class="hero-buttons">
-                <a href="https://t.me/gostro_uzh" target="_blank" class="btn-main btn-telegram">
+                <a href="https://t.me/gostro_uzh" target="_blank" class="btn-main btn-telegram" rel="noopener noreferrer">
                     <i class="fa-regular fa-paper-plane"></i> Замовити
                 </a>
-                <a href="https://instagram.com/gostro.uzh" target="_blank" class="btn-main btn-insta">
+                <a href="https://instagram.com/gostro.uzh" target="_blank" class="btn-main btn-insta" rel="noopener noreferrer">
                     <i class="fa-brands fa-instagram"></i> Роботи
                 </a>
             </div>
         </section>
 
-        <!-- Trust Section (ОНОВЛЕНО: Тултіпи замість лайтбокса) -->
+        <!-- Trust Section -->
         <div class="trust-section reveal-up">
             <div class="trust-title">Клієнти кажуть (натисни на фото) 👇</div>
             <div class="trust-content">
@@ -67,7 +138,7 @@
                     
                     <!-- Відгук 1 -->
                     <div class="review-item" onclick="toggleReview(this)">
-                        <img src="https://picsum.photos/id/64/100/100" alt="Client">
+                        <img src="https://picsum.photos/id/64/100/100" alt="Клієнт Олег, відгук про заточку">
                         <div class="review-tooltip">
                             <div class="rt-head">
                                 <span>Oleg K.</span>
@@ -79,7 +150,7 @@
 
                     <!-- Відгук 2 -->
                     <div class="review-item" onclick="toggleReview(this)">
-                        <img src="https://picsum.photos/id/65/100/100" alt="Client">
+                        <img src="https://picsum.photos/id/65/100/100" alt="Клієнт Анна, відгук про заточку ножів">
                         <div class="review-tooltip">
                             <div class="rt-head">
                                 <span>Anna M.</span>
@@ -91,7 +162,7 @@
 
                     <!-- Відгук 3 -->
                     <div class="review-item" onclick="toggleReview(this)">
-                        <img src="https://picsum.photos/id/66/100/100" alt="Client">
+                        <img src="https://picsum.photos/id/66/100/100" alt="Шеф-кухар Алекс про заточку">
                         <div class="review-tooltip">
                             <div class="rt-head">
                                 <span>Chef Alex</span>
@@ -101,9 +172,8 @@
                         </div>
                     </div>
 
-                    <!-- Кнопка "Більше" веде на Instagram -->
-					
-                    <a href="https://instagram.com/gostro.uzh" target="_blank" class="review-item more-reviews">
+                    <!-- Кнопка "Більше" -->
+                    <a href="https://instagram.com/gostro.uzh" target="_blank" class="review-item more-reviews" aria-label="Більше відгуків в Instagram" rel="noopener noreferrer">
                         <i class="fa-solid fa-ellipsis"></i>
                     </a>
 
@@ -113,7 +183,7 @@
                     <div class="counter-wrap">
                         <span class="counter" data-target="1250">0</span><span class="plus-sign">+</span>
                     </div>
-                    <small>ножів</small>
+                    <small>заточених ножів</small>
                 </div>
             </div>
         </div>
@@ -122,23 +192,18 @@
         <div class="slider-wrapper reveal-scale">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/292/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/250/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/433/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/160/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/36/300/300"></div>
-                    <!-- Duplicates -->
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/292/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/250/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/433/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/160/300/300"></div>
-                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/36/300/300"></div>
+                    <!-- Додано ALT до зображень слайдера -->
+                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/292/300/300" alt="Приклад заточки кухонного ножа"></div>
+                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/250/300/300" alt="Відновлення ріжучої кромки"></div>
+                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/433/300/300" alt="Поліровка леза"></div>
+                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/160/300/300" alt="Заточка мисливського ножа"></div>
+                    <div class="swiper-slide" onclick="openLB(this)"><img src="https://picsum.photos/id/36/300/300" alt="Гострий ніж ріже папір"></div>
                 </div>
             </div>
             <div class="slider-caption">👆 Натисни на фото, щоб збільшити</div>
         </div>
 
-        <!-- Pricing (Reveal Up) -->
+        <!-- Pricing -->
         <div class="glass-box card-link reveal-up" onclick="toggleAccordion(this)">
             <div class="card-head">
                 <div class="title-group"><i class="fa-solid fa-file-invoice-dollar"></i> Прайс-лист</div>
@@ -159,7 +224,7 @@
             </div>
         </div>
 
-        <!-- Delivery (Reveal Up) -->
+        <!-- Delivery -->
         <div class="glass-box card-link reveal-up" onclick="toggleAccordion(this)">
             <div class="card-head">
                 <div class="title-group"><i class="fa-solid fa-truck-fast"></i> Доставка по Україні</div>
@@ -178,7 +243,7 @@
             </div>
         </div>
 
-        <!-- NEW: FAQ Section (Часті питання) -->
+        <!-- FAQ -->
         <div class="glass-box card-link reveal-up" onclick="toggleAccordion(this)">
             <div class="card-head">
                 <div class="title-group"><i class="fa-solid fa-circle-question"></i> Часті питання (FAQ)</div>
@@ -199,34 +264,29 @@
                             <div class="faq-q">Чи безпечно відправляти поштою?</div>
                             <div class="faq-a">Так, це стандартна практика. Головне — добре упакуйте лезо в картон, щоб воно не прорізало коробку.</div>
                         </div>
-                        <div class="faq-item">
-                            <div class="faq-q">Чи працюєте ви з керамікою?</div>
-                            <div class="faq-a">На даний момент працюю тільки зі сталевими клинками різних марок (від нержавійки до порошкових сталей).</div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Socials -->
-        <a href="https://instagram.com/gostro.uzh" target="_blank" class="glass-box card-link reveal-up">
+        <a href="https://instagram.com/gostro.uzh" target="_blank" class="glass-box card-link reveal-up" rel="noopener noreferrer">
             <div class="card-head"><div class="title-group"><i class="fa-brands fa-instagram"></i> Portfolio</div><i class="fa-solid fa-arrow-up-right-from-square icon-arrow"></i></div>
         </a>
-        <a href="https://t.me/gostro_uzh" target="_blank" class="glass-box card-link reveal-up delay-100">
+        <a href="https://t.me/gostro_uzh" target="_blank" class="glass-box card-link reveal-up delay-100" rel="noopener noreferrer">
             <div class="card-head"><div class="title-group"><i class="fa-brands fa-telegram"></i> Telegram</div><i class="fa-solid fa-arrow-up-right-from-square icon-arrow"></i></div>
         </a>
 
     </main>
 
     <footer>
-        <div class="footer-copy">© 2025 GOSTRO.UZH</div>
+        <div class="footer-copy">© 2025 GOSTRO.UZH | Заточка ножів</div>
         <div class="footer-contacts"><a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a> • <a href="https://t.me/gostro_uzh">@gostro_uzh</a></div>
     </footer>
 
-    <div id="lightbox"><button class="lb-close">&times;</button><img id="lb-img" src=""></div>
+    <div id="lightbox"><button class="lb-close" aria-label="Закрити">&times;</button><img id="lb-img" src="" alt="Збільшене фото"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
