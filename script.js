@@ -92,6 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
     revealElements.forEach(el => observer.observe(el));
 
+    // Актуальний рік для футер зони
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Показати кнопку, коли проскролили 300px
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('stickyBtn');
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
 });
+
