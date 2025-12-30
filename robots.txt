@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gostro.uzh/sitemap.xml
+
+Sitemap: https://gostro.uz.ua/sitemap.xml
